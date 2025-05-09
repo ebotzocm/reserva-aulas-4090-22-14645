@@ -1,0 +1,17 @@
+name: Validar HTML
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  validar-html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v3
+
+      - name: Validar HTML
+        uses: Cyb3r-Jak3/html5validator-action@v0.5
+        with:
+          files: index.html
